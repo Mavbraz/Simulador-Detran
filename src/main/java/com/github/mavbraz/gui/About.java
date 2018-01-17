@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.mavbraz.gui;
 
 import javax.swing.ImageIcon;
@@ -43,7 +38,7 @@ public class About extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/detran-icon.png")).getImage());
         setResizable(false);
 
-        lblDescription.setText("<html><body><center><h2>Simulado Detran - Versão 1.0</h2></center><hr><b>Descrição:</b><br><br>Programa, com 297 questões, criado com base  no simulador oficial do Detran/PE.<br><hr><b>Recursos e regras:</b><br><br>1. Simulado:<br>- Você terá 30 minutos para realizar a prova<br>- São necessários no mínimo 21 pontos para passar<br><br>2. Visualizar perguntas e repostas:<br>- Há a possibilidade de filtrar por categoria e pelo conteúdo de alguma pergunta<br><hr><b>Contato:</b><br><br>Criado por: Matheus Braz<br>E-mail: mavbraz@gmail.com<br>Github: https://github.com/mavbraz</body></html>");
+        lblDescription.setText("<html><body><center><h2>Simulado Detran - Versão 1.0.1</h2></center><hr><b>Descrição:</b><br><br>Programa, com 297 questões, criado com base  no simulador oficial do Detran/PE.<br><hr><b>Recursos e regras:</b><br><br>1. Simulado:<br>- Você terá 30 minutos para realizar a prova<br>- São necessários no mínimo 21 pontos para passar<br><br>2. Visualizar perguntas e repostas:<br>- Há a possibilidade de filtrar por categoria e pelo conteúdo de alguma pergunta<br><hr><b>Contato:</b><br><br>Criado por: Matheus Braz<br>E-mail: mavbraz@gmail.com<br>Github: https://github.com/mavbraz</body></html>");
         lblDescription.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         lblDescription.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 

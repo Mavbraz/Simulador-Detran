@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.mavbraz.gui;
 
 import com.github.mavbraz.hibernate.DetranFactory;
@@ -112,7 +107,7 @@ public class Questions extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setColumnSelectionAllowed(true);
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -254,6 +249,8 @@ public class Questions extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, message, "Informações", JOptionPane.PLAIN_MESSAGE);
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione uma pergunta da tabela para ver suas informações.", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
@@ -291,15 +288,12 @@ public class Questions extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         DetranFactory database = new DetranFactory();
         Question question = null;
-
         try {
             question = database.getQuestion(id);
         } finally {
             model.setRowCount(0);
-
             if (question != null) {
                 model.addRow(createTableRow(question));
-
                 questions = Arrays.asList(question);
             }
         }
