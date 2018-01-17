@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.mavbraz.gui;
 
 import com.github.mavbraz.hibernate.DetranFactory;
@@ -894,6 +889,14 @@ public class Test extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRefazerProvaActionPerformed
 
     private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
+        if (!delivered) {
+            int dialogResult = JOptionPane.showConfirmDialog(this, "Você deseja ir para o menu principal sem entregar a prova?", "Aviso", JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.NO_OPTION) {
+                return;
+            }
+        }
+        
         this.setVisible(false);
         main.setVisible(true);
 
@@ -909,6 +912,8 @@ public class Test extends javax.swing.JFrame {
         tbtnB.setEnabled(true);
         tbtnC.setEnabled(true);
         tbtnD.setEnabled(true);
+        
+        lblResposta.setText("");
 
         if (delivered) {
             for (int i = 0; i < questions.length; i++) {
